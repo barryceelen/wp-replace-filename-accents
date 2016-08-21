@@ -1,0 +1,32 @@
+#replace-filename-accents-bar {
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+	height: 38px;
+	margin: 5px 0 15px;
+	position: relative;
+}
+
+#replace-filename-accents-bar-percent {
+	font-weight: bold;
+	line-height: 38px;
+	margin: -19px 0 0 -150px;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+}
+
+.ui-progressbar .ui-progressbar-value {
+	background-color: #00a0d2;
+	height: 100%;
+}
+
+.replace-filename-accents-restart {
+	margin-left: 8px;
+}
+
+.rtl .replace-filename-accents-restart {
+	margin-right: 8px;
+}
