@@ -7,7 +7,7 @@ An admin page is added under the 'Tools' menu item where you can process your fi
 
 **Important:** Be smart and [Back up your database and files](https://codex.wordpress.org/WordPress_Backups) before running the replacement process. If anything breaks, there is no "undo".
 
-The WordPress `remove_accents` function might not work as expected due to different file name encodings. The plugin works best if you have the php [Normalizer](http://php.net/manual/en/class.normalizer.php) extension installed.
+The WordPress `remove_accents` function might not work as expected (See [#35951](https://core.trac.wordpress.org/ticket/35951)) due to different file name encodings. The plugin works best if you have the php [Normalizer](http://php.net/manual/en/class.normalizer.php) extension installed.
 
 ## ⚠️ Warning! Broken links and images ahead 😱!
 
