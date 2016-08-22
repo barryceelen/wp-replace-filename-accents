@@ -107,7 +107,7 @@ class ReplaceFilenameAccents {
 			array( $this, 'management_page' )
 		);
 
-		$this->_tools_page_url = menu_page_url( str_replace( 'tools_page_', '', $this->_hook_suffix ), false);
+		$this->_tools_page_url = menu_page_url( str_replace( 'tools_page_', '', $this->_hook_suffix ), false );
 	}
 
 	/**
@@ -121,7 +121,7 @@ class ReplaceFilenameAccents {
 
 		$count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_type = 'attachment'" );
 
-		if ( 'POST' === $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['remove_filename_accents'] ) && wp_verify_nonce( $_POST['remove_filename_accents'], 'remove_filename_accents' ) ) {
+		if ( ! empty( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['remove_filename_accents'] ) && wp_verify_nonce( $_POST['remove_filename_accents'], 'remove_filename_accents' ) ) {
 			require( 'templates/admin-page-process.php' );
 		} else {
 			require( 'templates/admin-page-form.php' );
@@ -230,7 +230,7 @@ class ReplaceFilenameAccents {
 		$post = get_post( (int) $_REQUEST['id'] );
 
 		if ( ! $post ) {
-			wp_send_json_error( array( 'messages' => array( sprintf( __( 'Post does not exist. [%d]', 'replace-filename-accents' ), $_REQUEST['id'] ) ), ) );
+			wp_send_json_error( array( 'messages' => array( sprintf( __( 'Post does not exist. [%d]', 'replace-filename-accents' ), $_REQUEST['id'] ) ) ) );
 		}
 
 		if ( 'attachment' !== $post->post_type ) {
@@ -290,7 +290,7 @@ class ReplaceFilenameAccents {
 
 					// Different image sizes might point to the same file.
 					if ( ! empty( $metadata['sizes'] ) ) {
-						foreach( $metadata['sizes'] as $name => $arr ) {
+						foreach ( $metadata['sizes'] as $name => $arr ) {
 							$sizes[ $arr['file'] ][] = $name;
 						}
 					}
@@ -317,7 +317,7 @@ class ReplaceFilenameAccents {
 						} else {
 							$messages[] = sprintf( __( 'Renamed %1$s to %2$s', 'replace-filename-accents' ), '<code>' . (string) $filename . '</code>', '<code>' . (string) $filename_unique . '</code>' );
 
-							foreach( $sizes as $size ) {
+							foreach ( $sizes as $size ) {
 								$metadata['sizes'][ $size ]['file'] = $filename_unique;
 							}
 
