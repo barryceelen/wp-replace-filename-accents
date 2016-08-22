@@ -339,6 +339,8 @@ class ReplaceFilenameAccents {
 			}
 		}
 
+		clean_post_cache( $post->ID );
+
 		wp_send_json_success(
 			array(
 				'messages' => $messages,
