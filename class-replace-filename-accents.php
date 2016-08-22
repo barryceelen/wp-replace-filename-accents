@@ -107,7 +107,7 @@ class ReplaceFilenameAccents {
 			array( $this, 'management_page' )
 		);
 
-		$this->_tools_page_url = admin_url( 'tools.php?page=' . str_replace( 'tools_page_', '', $this->_hook_suffix ) );
+		$this->_tools_page_url = menu_page_url( str_replace( 'tools_page_', '', $this->_hook_suffix ), false);
 	}
 
 	/**
