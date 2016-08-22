@@ -262,14 +262,10 @@ class ReplaceFilenameAccents {
 			wp_send_json_error( array( 'messages' => array( sprintf( __( 'Could not rename %1$s to %2$s', 'replace-filename-accents' ), '<code>' . (string) $filename . '</code>', '<code>' . (string) $filename_unique . '</code>' ) ) ) );
 		} else {
 
-			update_attached_file( $post->ID, $file_path_parts['dirname'] . '/' . $filename_unique );
+			global $wpdb;
 
-			wp_update_post(
-				array(
-					'ID'   => $post->ID,
-					'guid' => str_replace( $file_path_parts['filename'], $filename_unique, $post->guid ),
-				)
-			);
+			$wpdb->update( $wpdb->posts, array( 'guid' => str_replace( $filename, $filename_unique, $post->guid ) ), array( 'ID' => $post->ID ), array( '%s' ), array( '%d' ) );
+			update_attached_file( $post->ID, $file_path_parts['dirname'] . '/' . $filename_unique );
 
 			/**
 			 * Fires after a file is renamed.
