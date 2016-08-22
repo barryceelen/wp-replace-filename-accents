@@ -264,6 +264,13 @@ class ReplaceFilenameAccents {
 
 			update_attached_file( $post->ID, $file_path_parts['dirname'] . '/' . $filename_unique );
 
+			wp_update_post(
+				array(
+					'ID'   => $post->ID,
+					'guid' => str_replace( $file_path_parts['filename'], $filename_unique, $post->guid ),
+				)
+			);
+
 			/**
 			 * Fires after a file is renamed.
 			 *
