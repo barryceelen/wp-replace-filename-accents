@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 global $attachments;
 ?>
 <div class="wrap" id="replace-filename-accents-wrap">
-	<h2><?php esc_html_e( 'Replace Filename Accents', 'replace-filename-accents' ); ?></h2>
+	<h1><?php echo get_admin_page_title(); ?></h1>
 	<noscript>
 		<div id="message" class="notice notice-error">
 			<p><?php esc_html_e( 'You must enable Javascript in order to proceed.', 'replace-filename-accents' ) ?></p>

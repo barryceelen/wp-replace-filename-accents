@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <div class="wrap">
-	<h1><?php esc_html_e( 'Replace Filename Accents', 'replace-filename-accents' ); ?></h1>
+	<h1><?php echo get_admin_page_title(); ?></h1>
 	<noscript>
 		<div class="notice notice-error">
 			<p><?php esc_html_e( 'You must enable Javascript in order to proceed.', 'replace-filename-accents' ) ?></p>
