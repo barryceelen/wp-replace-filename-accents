@@ -12,7 +12,6 @@
 	    count               = 0,
 	    errorCount          = 0,
 	    ids                 = jQuery.parseJSON( vars.ids ),
-	    resulttext          = '',
 	    run                 = true,
 	    abort               = false,
 	    renamedCount        = 0,
